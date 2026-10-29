@@ -23,7 +23,6 @@ class VoiceControl:
 
     #the MusicPlayer we control, plus the speech tools
     def __init__(self, player):
-        # Attributes: the MusicPlayer we control, plus the speech tools
         self.player = player
         self.recognizer = sr.Recognizer()
         self.mic = sr.Microphone()  # uses your default microphone
@@ -40,12 +39,12 @@ class VoiceControl:
             try:
                 audio = self.recognizer.listen(source, timeout=5, phrase_time_limit=3)
             except sr.WaitTimeoutError:
-                return None  # nobody spoke
+                return None  
 
         try:
             return self.recognizer.recognize_google(audio).lower()
         except sr.UnknownValueError:
-            return None  # couldn't understand
+            return None  
         except sr.RequestError as error:
             print("Speech service error:", error)
             return None
