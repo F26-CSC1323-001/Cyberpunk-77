@@ -12,7 +12,7 @@ import board
 import busio
 from adafruit_apds9960.apds9960 import APDS9960
 
-from music_player import MusicPlayer
+from spotify_music_player import MusicPlayer
 
 
 # Reads the APDS-9960 sensor and tells a MusicPlayer what to do.
